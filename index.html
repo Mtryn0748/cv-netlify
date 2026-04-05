@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Özgeçmiş | Muharrem Tarayan</title>
+</head>
+<body>
+    <!-- Açma butonu -->
+     <span class="openbtn" id="openbtn" onclick="toggleSidebar()">≡</span>
+     <!-- Açma butonu bitti -->
+
+     <!-- profil -->
+      <div class="sidebar" id="sidebar">
+        <span class="closebtn" onclick="toggleSidebar()">X</span>
+        <div class="profile">
+            <img src="logom_myface2.png" alt="Profile Picture">
+            <h2>Muharrem Tarayan</h2>
+            <h3>Yazılım Geliştirici</h3>
+        </div>
+        <!-- profil bitti -->
+
+        <!-- navbar  -->
+        <nav>
+            <ul>
+                <li onclick="showSection('about')">Hakkında</li>
+                <li onclick="showSection('education')">Eğitim</li>
+                <li onclick="showSection('experience')">Deneyim</li>
+                <li onclick="showSection('skills')">Yetenekler</li>
+                <li onclick="showSection('certifications')">Sertifikalar</li>
+                <li onclick="showSection('projects')">Projeler</li>
+                <li onclick="showSection('contact')">İletişim</li>
+            </ul>
+        </nav>
+        <!-- navbar bitti -->
+      </div>
+    <!-- sidebar bitti -->
+
+
+
+    <!-- içerik alanı content -->
+     <div class="content" id="content">
+        <!-- Eğitim başlangıç ve burada açılınca ilk gelen ekran -->
+        <div id="education" class="section">
+            <h2>Eğitim</h2>
+            <ul class="education-list">
+                <li>
+                    <h3>Muğla Sıtkı Koçman Üniversitesi</h3>
+                    <p><strong>Bilişim Sistemleri Mühendisliği</strong> | 2023-2027(devam ediyor)</p>
+                </li>
+                <li>
+                    <h3>Açı Lisesi</h3>
+                    <p><strong>Lise Eğitimi</strong>  | 2018-2022</p>
+                </li>
+                <li>
+                    <h3>Cumhuriyet Ortaokulu</h3>
+                    <p><strong>Ortaöğretim</strong> | 2014-2018</p>
+                </li>
+                <li>
+                    <h3>Korkuteli OÖ İlkokulu</h3>
+                    <p><strong>İlköğretim</strong> | 2010-2014</p>
+                </li>
+            </ul>
+        </div>
+        <!-- Eğitim bitti -->
+
+
+
+        <!-- Deneyim başlangıç -->
+        <div id="experience" class="section">
+            <h2>Deneyim</h2>
+            <ul class="experience-list">
+                <li>
+                    <h3>Stajyer Yazılım Geliştirici - Akdeniz Üniversitesi</h3>
+                    <p><strong>Temmuz 2025 - Ağustos 2025</strong></p>
+                    <ul>
+                        <p>Staj dönemi boyunca yazılım geliştirme ve proje yönetimi konularında deneyim kazandım.
+                        Üniversitenin çeşitli projelerinde aktif olarak yer aldım ve takım çalışması becerilerimi geliştirdim.
+                        Ayrıca, yazılım geliştirme süreçlerini öğrenme fırsatı buldum ve bu süreçlerde katkıda bulundum.
+                        </p>
+                    </ul>
+                </li>
+                <li>
+                    <h3>Web Geliştirme </h3>
+                    <p><strong>2025 - </strong></p>
+                    <ul>
+                        <p>HTML, CSS ve JavaScript kullanarak çeşitli statik web projeleri geliştirdim. 
+                            Responsive tasarım prensiplerini uygulayarak mobil uyumlu arayüzler oluşturdum. 
+                            Kişisel portfolyo sitesi ve blog projeleri başta olmak üzere güncel olarak web projeleri geliştiriyorum.</p>
+                    </ul>
+                </li>
+                <li>
+                    <h3>Makine Öğrenimi ve Veri Bilimi </h3>
+                    <p><strong>2024 - </strong></p>
+                    <ul>
+                        <p>Makine öğrenimi ve veri bilimi alanında çeşitli projeler gerçekleştirdim.
+                        Bu projelerde, veri analizi, modelleme ve sonuçların yorumlanması konularında deneyim kazandım.
+                        Ayrıca, bu alanda kullanılan araçları ve teknikleri öğrenme fırsatı buldum.
+                        Halihazırda bu alanda çalışmalarımı sürdürmekteyim ve kendimi geliştirmeye devam ediyorum.
+                        </p>
+                </li>               
+        </div>
+        <!-- Deneyim bitti -->
+
+
+
+        <!-- Yetenekler başlangıç -->
+        <div id="skills" class="section">
+            <h2>Yetenekler</h2>
+            <ul class="skills-list">
+                <li><strong>Programlama Dilleri:</strong> Python, C#</li>
+                <li><strong>Veri Tabanları:</strong> MySQL, MsSql</li>
+                <li><strong>Web Geliştirme:</strong> HTML, CSS, JavaScript</li>
+                <li><strong>Makine Öğrenimi:</strong> Scikit-learn, TensorFlow</li>
+                <li><strong>Veri Analizi:</strong> Pandas, NumPy, Matplotlib, Seaborn</li>
+                <li><strong>Versiyon Kontrolü:</strong> Git</li>
+            </ul>
+
+        </div>
+        <!-- Yetenekler bitişi -->
+
+
+
+        <!-- Sertifikalar başlangıç -->
+        <div id="certifications" class="section">
+            <h2>Sertifikalar</h2>
+            <div class="portfolio-items">
+                <div class="portfolio-item">
+                    <h3>Python Programlama Dili - Udemy</h3>
+                    <p>Python programlama dili hakkında kapsamlı bir kurs.</p>
+                </div>
+                <div class="portfolio-item">
+                    <h3>Veri Analizi ve Makine Öğrenimi - Udemy</h3>
+                    <p>Veri analizi ve makine öğrenimi konularında kapsamlı bir kurs.</p>
+                </div>
+                <div class="portfolio-item">
+                    <h3>Web Geliştirme - Udemy</h3>
+                    <p>Web geliştirme konularında kapsamlı bir kurs.</p>
+                </div>
+                <div class="portfolio-item">
+                    <h3>Versiyon Kontrolü - BTK</h3>
+                    <p>Versiyon kontrolü konularında kapsamlı bir kurs.</p>
+                </div>
+                <div class="portfolio-item">
+                    <h3>C# programlama dili - Udemy</h3>
+                    <p>C# programlama ve oop konularında kapsamlı bir kurs.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Sertifikalar bitti -->
+
+
+        <!-- Hakkında başlangıç -->
+<div id="about" class="section active">
+    <h2>Hakkında</h2>
+    
+    <div class="about-info-grid">
+        <div class="about-info-card">
+            <span class="about-label">Ad Soyad</span>
+            <span class="about-value">Muharrem Tarayan</span>
+        </div>
+        <div class="about-info-card">
+            <span class="about-label">Şehir</span>
+            <span class="about-value">Antalya</span>
+        </div>
+        <div class="about-info-card">
+            <span class="about-label">Üniversite</span>
+            <span class="about-value">Muğla Sıtkı Koçman Üniversitesi</span>
+        </div>
+        <div class="about-info-card">
+            <span class="about-label">Bölüm</span>
+            <span class="about-value">Bilişim Sistemleri Mühendisliği</span>
+        </div>
+        <div class="about-info-card">
+            <span class="about-label">İlgi Alanları</span>
+            <span class="about-value">Yazılım Geliştirme, Veri Analizi, Makine Öğrenimi</span>
+        </div>
+    </div>
+
+    <p class="about-text">Merhaba! Ben Muharrem Tarayan, Muğla Sıtkı Koçman Üniversitesi'nde Bilişim Sistemleri Mühendisliği öğrencisiyim.
+         Yazılım geliştirme, veri analizi ve makine öğrenimi konularında tutkulu biriyim. Eğitim hayatım boyunca çeşitli projelerde yer aldım ve staj deneyimleri kazandım.
+         Kendimi sürekli geliştirmeye ve yeni teknolojileri öğrenmeye çalışıyorum.
+          Takım çalışmasına ve dürüstlüğe önem veririm.</p>
+</div>
+        <!-- Hakkında bitti -->
+
+
+       <div id="projects" class="section">
+            <h2>Projeler</h2>
+            <ul class="projects-list">
+                <li>
+                    <h3>HalıSaha-GO</h3>
+                    <p>Yerel spor tesisleri için web tabanlı randevu sistemi. (Üniversite Projesi)</p>
+                </li>
+                <li>
+                    <h3>Fiyat Tahminleme AI</h3>
+                    <p>Hammadde fiyatlarını makine öğrenmesi ile tahmin eden model çalışması.</p>
+                </li>
+                <li>
+                    <h3>Yoğunluk Analizi</h3>
+                    <p>YoloV8n ile yoğunluk analizi ve insan sayma.</p>
+                </li>
+                <li>
+                    <h3>Statik blog, portfolyo sitesi</h3>
+                    <p>HTML, CSS, JavaScript ile web projeleri.</p>
+                </li>
+            </ul>
+        </div>
+
+        <div id="contact" class="section">
+            <h2>İletişim</h2>
+            <div class="contact-container">
+                <a href="mailto:tarayanmuharrem123@gmail.com" class="contact-card">
+                    <div class="icon-box">
+                        <img src="https://img.icons8.com/?size=100&id=P7UIlhbpWzZm&format=png&color=3b82f6" alt="Email">
+                    </div>
+                    <span>Email Gönder</span>
+                </a>
+                
+                    <a href="https://www.linkedin.com/in/muharrem-tarayan-2464992a0/" target="_blank" class="contact-card">
+                    <div class="icon-box">
+                        <img src="https://img.icons8.com/?size=100&id=13930&format=png&color=3b82f6" alt="LinkedIn">
+                    </div>
+                    <span>LinkedIn</span>
+                </a>
+                    <a href="https://www.instagram.com/muharremtarayan07/?hl=en-gb" target="_blank" class="contact-card">
+                    <div class="icon-box">
+                        <img src="https://img.icons8.com/?size=100&id=Xy10Jcu1L2Su&format=png&color=3b82f6" alt="Instagram">
+                    </div>
+                    <span>Instagram</span>
+                </a>
+
+                <a href="https://www.facebook.com/muharrem.tarayan" target="_blank" class="contact-card">
+                    <div class="icon-box">
+                        <img src="https://img.icons8.com/?size=100&id=59780&format=png&color=3b82f6" alt="Facebook">
+                    </div>
+                    <span>Facebook</span>
+                </a>
+                <a href="https://github.com/Mtryn0748?tab=repositories" target="_blank" class="contact-card">
+                    <div class="icon-box">
+                        <img src="https://img.icons8.com/?size=100&id=12599&format=png&color=000000" alt="Github">
+                    </div>
+                    <span>Github</span>
+                </a>
+            </div>
+        </div>
+
+        <footer>
+            <p><strong>&copy; </strong> 2026 Muharrem Tarayan - Bilişim Sistemleri Mühendisi Adayı</p>
+        </footer>
+
+    
+     </div>
+    <!-- content bitişi -->
+     <!-- Yetenekler başlangıç -->
+
+    
+    
+        
+     <script src="script.js"></script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,384 @@
+body {
+    font-family: 'JetBrains Mono', monospace;
+    margin: 0;
+    background-color: #e1f5ee;
+    color: #1b0101 ;
+}
+.openbtn {
+    font-size: 40px;
+    cursor: pointer; /* İmleci el şeklinde yapar */
+    position: fixed; /* Sayfanın her yerinde görünmesini sağlar */
+    top: 10px;
+    left: 15px;
+    color: #0f172a ;
+    display: none; /* Mobil görünümde göster */
+    z-index: 2; /* Diğer içeriklerin üstünde görünmesini sağlar */
+}
+
+
+.sidebar {
+    width: 250px;
+    background-color: #0f172a;
+    color: #f8fafc;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: 0.3s;
+    overflow-x: hidden; /* Genişlik 0 olduğunda içindekiler taşmasın */
+    padding: 20px 0; /* Padding'i sağa sola değil, sadece yukarı aşağı ver */
+    z-index: 1000; /* Her zaman en üstte olsun */
+}
+
+/* Sidebar içindeki elemanlara padding ver */
+.profile, nav ul {
+    padding: 0 20px;
+}
+
+.sidebar h2 {
+    font-size: 40px;
+    color: #f9f2f2 ;
+    
+    margin-top: 0;
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+}
+
+.profile {
+    text-align: center;
+    padding: 10px;
+    width: 200px;
+    height: 450px; /* Profil bölümünün yüksekliğini artırır */
+
+}
+.profile img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 15px; /* Profil resminin altına boşluk bırakır */
+}
+
+.profile h2, .profile h3 {
+    margin-top: 20px; /* Başlıkların üstünde boşluk bırakır */
+
+}
+
+nav ul {
+    list-style-type: none; 
+    padding: 0;
+}
+nav ul li {
+    padding: 15px 20px; /* sağa ve sola 20px, yukarı ve aşağı 15px boşluk */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+nav ul li:hover {
+    background-color: #05df93;
+    color: #2D3748;
+    border-radius: 6px;
+    font-weight:bolder;
+}
+
+nav ul li i {
+    margin-right: 10px;
+}
+
+.content {
+    margin-left: 300px; /* Kenar çubuğunun genişliği kadar boşluk bırakır */
+    padding: 20px; /* İçeriğin kenar çubuğundan uzaklaşmasını sağlar */
+    transition: margin-left 0.3s; /* Kenar çubuğu açıldığında içeriğin kaymasını sağlar */
+    min-height: 100vh; /* Sayfanın tam yüksekliğini kaplamasını sağlar */
+    padding-top: 60px; /* İçeriğin üst kısmına boşluk bırakır, böylece açma düğmesiyle çakışmaz */
+}   
+
+.section {
+    display: none;/* display: none; Tüm bölümleri başlangıçta gizle */
+}
+
+.section.active {
+    display: block; /* Aktif bölümü göster*/
+}
+
+h2 {
+    color: #0f172a ;
+    border-bottom: #3b82f6 3px solid; /* Başlıkların altına çizgi ekler */
+    padding-bottom: 10px; /* Başlıkların altına boşluk bırakır */
+    margin-bottom: 20px; /* Başlıkların altına boşluk bırakır */
+    font-weight: 700;
+    font-size: 36;
+}
+ul {
+    list-style-type: none; /* Madde işaretlerini kare yapar */
+    padding-left: 0px; /* Madde işaretlerini sola hizalamak için */
+}
+/* eğitim ve deneyim bölümlerindeki listeler için özel stiller */
+
+.education-list {
+    list-style-type: none; /* Madde işaretlerini kare yapar */
+    padding: 0px; /* Madde işaretlerini sola hizalamak için */
+}
+
+ul.education-list li {
+    background-color: #ffffff;
+    margin-bottom: 15px; /* Her bir madde arasında boşluk */
+    padding: 20px; /* Her bir maddeye iç boşluk */
+    border-left: 5px solid #1d9e75 ; /* Sol kenar çizgisi */
+    border-right: 5px solid #7b38161a ; /*sağ kenar çizgisi */
+    position: relative; /* /* Pseudo-elementin konumlandırılması için */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); /* Hafif gölge efekti */
+    border-radius: 6px; /* Köşeleri yuvarlatır */
+
+}
+
+ul.education-list li h3 {
+    margin: 0;
+    color: #1d9e75 ;
+}
+ul.education-list li p {
+    margin: 10px 0 0 0; /* Başlık ile paragraf arasında boşluk bırakır */
+    color: #000000;
+}
+
+/* deneyim bölümleri için özel stiller */
+
+.experience-list {
+    list-style-type: none; /* madde işaretini kaldırır */
+    padding: 0px; /* Madde işaretlerini sola hizalamak için */
+}
+
+.experience-list li {
+    background-color: #ffffff;
+    margin-bottom: 15px; /* Her bir madde arasında boşluk */
+    padding: 20px; /* Her bir maddeye iç boşluk */
+    border-left: 5px solid #1d9e75 ; /* Sol kenar çizgisi */
+    border-right: 5px solid #7b38161a ; /*sağ kenar çizgisi */
+    position: relative; /* /* Pseudo-elementin konumlandırılması için */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); /* Hafif gölge efekti */
+    border-radius: 6px; /* Köşeleri yuvarlatır */
+
+}
+ul.experience-list li h3 {
+    margin: 0;
+    color: #1d9e75 ;
+}
+ul.experience-list li p {
+    margin: 10px 0 0 0; /* Başlık ile paragraf arasında boşluk bırakır */
+    color: #000000;
+}
+ul.experience-list li::hover {
+    background-color: #445749eb;
+}
+
+
+ul.experience-list li p{
+    margin-top: 10px;
+    color: #030703;
+}
+
+/* yetenek listesi */
+
+ul.skills-list li{
+    background-color: #ffffff;
+    margin-bottom: 5px; /* Her bir madde arasında boşluk */
+    padding: 20px; /* Her bir maddeye iç boşluk */
+    border-left: 5px solid #1d9e75 ; /* Sol kenar çizgisi */
+    border-right: 5px solid #7b38161a ; /*sağ kenar çizgisi */
+    position: relative; /* /* Pseudo-elementin konumlandırılması için */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); /* Hafif gölge efekti */
+    border-radius: 6px; /* Köşeleri yuvarlatır */
+}
+ul.skills-list li:before{
+    content: ">>> ";
+    /* position: absolute; */
+    left: 15px;
+    top:50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+}
+
+/* portfoly */
+
+.portfolio-items{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.portfolio-item {
+    background: linear-gradient(#baeedd, #a1e9d0);
+    padding: 15px;
+    border-radius: 5px;
+    flex: 1 1 calc(33% - 40%);
+    box-sizing: border-box;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); /* Hafif gölge efekti */
+
+}
+
+.portfolio-item h3 {
+    margin-top: 0;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-5px);
+    transition: all 0.3s;
+}
+/*HAKKINDA KISMI*/
+
+.about-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.about-info-card {
+    background-color: #ffffff;
+    padding: 15px 20px;
+    border-left: 5px solid #3b82f6;
+    border-right: 5px solid #7b38161a;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.about-label {
+    font-size: 14px;
+    color: #555;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.about-value {
+    font-size: 15px;
+    color: #0f172a;
+    font-weight: 500;
+}
+
+.about-text {
+    background-color: #ffffff;
+    padding: 20px;
+    border-left: 5px solid #3b82f6;
+    border-right: 5px solid #7b38161a;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    color: #000000;
+    margin: 0;
+    line-height: 1.7;
+}
+
+/* Projeler Listesi Düzenleme */
+.projects-list {
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Ekran boyutuna göre otomatik dizilir */
+    gap: 20px;
+}
+
+.projects-list li {
+    background-color: #ffffff; /* Yumuşak beyaz */
+    padding: 25px;
+    border-radius: 6px; /* Köşeleri iyice yumuşattık */
+    border-left: 5px solid #1d9e75; /* Üstten renk vurgusu */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.projects-list li:hover {
+    transform: translateY(-6px); /* Üzerine gelince hafif kalkar */
+}
+
+.projects-list li h3 {
+    color: #1d9e75;
+    margin-top: 0;
+}
+
+/*iletişim*/
+/* İletişim Konteynırı */
+.contact-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Kartları yan yana diz */
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Kartın Kendisi (Artık <a> etiketi olduğu için tıklanabilir) */
+.contact-card {
+    background-color: #ffffff;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 20px;
+    border-radius: 20px; /* Keskinliği kıran yüksek radius */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05); /* Yumuşak gölge */
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.02);
+}
+
+/* Kartın Üzerine Gelince */
+.contact-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 35px rgba(59, 130, 246, 0.15); /* Hafif mavi parlama */
+    background-color: #f8fafc;
+}
+
+/* İkon Kutusu */
+.icon-box {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-box img {
+    width: 100%; /* İkonun kartı patlatmasını engeller */
+    height: auto;
+}
+
+/* Yazı Stili */
+.contact-card span {
+    color: #1e293b;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+
+
+
+/* Footer Stili */
+footer {
+    margin-top: 50px;
+    padding: 20px;
+    border-top: 2px solid rgba(0,0,0,0.1);
+    text-align: center;
+    color: #1e293b;
+    font-size: 14px;
+
+}
+@media screen and (max-width: 768px) {
+    .sidebar {
+        width: 0;
+        padding: 0; /* Sidebar kapalıyken padding içindekileri taşırmasın */
+    }
+    .content {
+        margin-left: 0 !important;
+    }
+    .openbtn {
+        display: block;
+    }
+}
+
+
+
+
