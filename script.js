@@ -9,8 +9,8 @@ window.onclick = function(event) {
     var openbtn = document.getElementById("openbtn");
 
     // Eğer tıklanan yer sidebar değilse VE açma butonu değilse VE sidebar şu an açıksa...
-    if (!sidebar.contains(event.target) && !openbtn.contains(event.target) && sidebar.style.width === "250px") {
-        toggleSidebar(); // Kapatma fonksiyonunu çalıştır
+    if (!sidebar.contains(event.target) && !openbtn.contains(event.target) && parseInt(sidebar.style.width) > 0) {
+        toggleSidebar();
     }
 }
 
@@ -19,8 +19,7 @@ function toggleSidebar() {
     var content = document.getElementById("content");
     var openbtn = document.getElementById("openbtn");
 
-    // Genişliği kontrol ederken sayısal değere odaklanalım
-    if (sidebar.style.width === "250px") {
+    if (parseInt(sidebar.style.width) > 0) {  // "250px" === "250px" yerine sayısal karşılaştırma
         sidebar.style.width = "0px";
         content.style.marginLeft = "0px";
         openbtn.style.display = "block";
